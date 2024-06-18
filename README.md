@@ -1,3 +1,41 @@
+# Sovity "eXtended" Community Edition (XCE)
+
+This is a fork of [sovity/edc-extensions](https://github.com/sovity/edc-extensions) 
+that adds support for the [`HttpProxy` transfer method](docs/getting-started/documentation/data-transfer-methods.md)
+to the Community Edition Connector.
+
+The extension includes the following EDC Extensions the original bundle:
+
++ [EDC Data Plane API](https://github.com/eclipse-edc/Connector/tree/v0.2.1/extensions/data-plane/data-plane-api)
++ [EDC Data Plane Selector API](https://github.com/eclipse-edc/Connector/tree/v0.2.1/extensions/data-plane-selector/data-plane-selector-api)
++ [HTTP Dynamic EDR Receiver](https://github.com/eclipse-edc/Connector/tree/v0.2.1/extensions/control-plane/transfer/transfer-pull-http-dynamic-receiver)
+
+## Build 
+
+The build process is the same as for the original Community Edition, only
+this time it will have the extra extensions as explained above.
+
+1. Set the `CONNECTOR_NAME` variable in the [Dockerfile](launchers/Dockerfile) to `sovity-ce` 
+(or `sovity-dev` for the dev configuration)
+2. Run the docker build command 
+    * It is advised to change the image name to avoid confusion with the original
+      Sovity-CE image by setting the image name with the `-t` flag.
+   
+   E.g.:
+   ```shell
+   # using production configuration
+   docker build . -f ./launchers/Dockerfile -t sovity-xce
+   ```
+   ```shell
+   # using dev configuration
+   docker build . -f ./launchers/Dockerfile -t sovity-xce-dev
+   ```
+ 
+
+## Below is the original README contents from the original repository.
+
+----
+
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
 <a name="readme-top"></a>
