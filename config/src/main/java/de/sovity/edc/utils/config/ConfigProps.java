@@ -575,6 +575,175 @@ public class ConfigProps {
             "but for some reason it is required, and EDC won't start up if it isn't configured." +
             "It is created in the Dockerfile")
         .relevantIf(NetworkType::isProduction)
+        .defaultValue("/app/empty-properties-file.properties")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_ASSET_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.asset.name")
+        .description("Asset Datasource: Name")
+        .defaultValue("asset")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_ASSET_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.asset.url")
+        .description("Asset Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_ASSET_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.asset.user")
+        .description("Asset Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_ASSET_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.asset.password")
+        .description("Asset Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTDEFINITION_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractdefinition.name")
+        .description("Contract Definition Datasource: Name")
+        .defaultValue("contractdefinition")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTDEFINITION_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractdefinition.url")
+        .description("Contract Definition Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTDEFINITION_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractdefinition.user")
+        .description("Contract Definition Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTDEFINITION_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractdefinition.password")
+        .description("Contract Definition Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTNEGOTIATION_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractnegotiation.name")
+        .description("Contract Negotiation Datasource: Name")
+        .defaultValue("contractnegotiation")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTNEGOTIATION_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractnegotiation.url")
+        .description("Contract Negotiation Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTNEGOTIATION_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractnegotiation.user")
+        .description("Contract Negotiation Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_CONTRACTNEGOTIATION_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.contractnegotiation.password")
+        .description("Contract Negotiation Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_POLICY_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.policy.name")
+        .description("Policy Datasource: Name")
+        .defaultValue("policy")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_POLICY_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.policy.url")
+        .description("Policy Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_POLICY_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.policy.user")
+        .description("Policy Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_POLICY_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.policy.password")
+        .description("Policy Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_TRANSFERPROCESS_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.transferprocess.name")
+        .description("Transfer Process Datasource: Name")
+        .defaultValue("transferprocess")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_TRANSFERPROCESS_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.transferprocess.url")
+        .description("Transfer Process Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_TRANSFERPROCESS_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.transferprocess.user")
+        .description("Transfer Process Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_TRANSFERPROCESS_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.transferprocess.password")
+        .description("Transfer Process Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_DATAPLANEINSTANCE_NAME = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.dataplaneinstance.name")
+        .description("Data Plane Instance Datasource: Name")
+        .defaultValue("dataplaneinstance")
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_DATAPLANEINSTANCE_URL = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.dataplaneinstance.url")
+        .description("Data Plane Instance Datasource: JDBC URL")
+        .defaultValueFn(MY_EDC_JDBC_URL::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_DATAPLANEINSTANCE_USER = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.dataplaneinstance.user")
+        .description("Data Plane Instance Datasource: Username")
+        .defaultValueFn(MY_EDC_JDBC_USER::getRaw)
+    );
+
+    public static final ConfigProp EDC_DATASOURCE_DATAPLANEINSTANCE_PASSWORD = addCeProp(builder -> builder
+        .category(Category.RAW_EDC_CONFIG_DEFAULTS)
+        .property("edc.datasource.dataplaneinstance.password")
+        .description("Data Plane Instance Datasource: Password")
+        .defaultValueFn(MY_EDC_JDBC_PASSWORD::getRaw)
     );
 
     private static ConfigProp addCeProp(Consumer<ConfigProp.ConfigPropBuilder> builderFn) {
